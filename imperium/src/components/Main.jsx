@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
-import ContentContainer from './ContentContainer';
-import Content from './Content';
 import Searchbar from './Searchbar';
 
 function Main(props) {
@@ -28,11 +26,9 @@ function Main(props) {
             </div>
 
             <div className="Main">
-            <iframe title= "map" src="https://travellermap.com/go/spin/1910?style=print">
-</iframe>
+
 
             </div>
-            <Content />
         </div>
     );
 }

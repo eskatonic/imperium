@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Nav from './components/Nav';
 import Main from './components/Main';
+import Map from './components/Map';
 import './App.css';
 
-const HandleClick = () => {
 
-}
-
-const HandleChange = () => {
-
-}
 
 function App() {
   return (
@@ -22,6 +18,9 @@ function App() {
       </div>
 
       <div className="App-Main">
+        <Route path="/" exact component={Main} />
+        <Route path="/map" component={Map} />
+
       <Main />
       </div>
 

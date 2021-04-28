@@ -13,8 +13,8 @@ function Header(props) {
         <Navbar bg="light" variant="light">
             <Navbar.Brand href='/'>HITCHHIKER'S GUIDE TO THE IMPERIUM</Navbar.Brand>
             <Nav className='mr-auto'>
-                <Nav.Link href='library'>LIBRARY DATA</Nav.Link>'
                 <Nav.Link href='map'>MAP OF THE UNIVERSE</Nav.Link>
+                <Nav.Link href='library'>LIBRARY DATA</Nav.Link>
             </Nav>
             <Form inline>
                 <FormControl type='text' placeholder='Search' className='mr-sm-2' />

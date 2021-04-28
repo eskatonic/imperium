@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import Map from './components/Map';
+import Library from './components/Library';
 import './App.css';
 
 
@@ -20,6 +21,7 @@ function App() {
       <div className="App-Main">
         <Route path="/" exact component={Main} />
         <Route path="/map" component={Map} />
+        <Route path="/library" component={Library} />
 
       <Main />
       </div>

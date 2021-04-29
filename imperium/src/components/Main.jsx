@@ -18,6 +18,8 @@ function Main(props) {
     return (
         <div className="Main-container">
 
+            <p>Welcome to the Third Imperium!  Please select a Sector for more information.</p>
+            <p>If you know the name of the star system you'd like to explore, please enter it below.</p>
             <div className="Main-searchbar">
                 <Searchbar searchString={searchString}
                             handleClick={handleClick}

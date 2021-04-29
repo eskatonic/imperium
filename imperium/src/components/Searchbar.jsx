@@ -21,7 +21,7 @@ const {searchInput, setSearchInput} = useState({});
         <div className="searchbar">
             <form onSubmit={handleClick}>
                 <input type="text"
-                placeholder="search here!"
+                placeholder="Search"
                 onChange={handleChange}
                 value={searchString}>
                 
@@ -29,7 +29,7 @@ const {searchInput, setSearchInput} = useState({});
                 </input>
 
                 <button type="submit">
-                    Click Me!
+                    SUBMIT
                 </button>
             </form>
         </div>

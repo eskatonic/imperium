@@ -12,14 +12,14 @@ function Header(props) {
 
         <Navbar bg="light" variant="light">
             <Navbar.Brand href='/'>HITCHHIKER'S GUIDE TO THE IMPERIUM</Navbar.Brand>
-            <Nav className='mr-auto'>
+            <Nav className='mc-auto'>
                 <Nav.Link href='map'>MAP OF THE UNIVERSE</Nav.Link>
                 <Nav.Link href='library'>LIBRARY DATA</Nav.Link>
             </Nav>
-            <Form inline>
+            {/* <Form inline>
                 <FormControl type='text' placeholder='Search' className='mr-sm-2' />
                 <Button variant='outline-dark'>Search</Button>
-            </Form>
+            </Form> */}
         </Navbar>
 
     </div>

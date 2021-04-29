@@ -1,5 +1,6 @@
 import React from "react";
 import './Map.css';
+// import MapKey from '../pictures/travellermapkey.jpg'; <-- import throws errors
 
 function Map(props) {
   return (
@@ -11,8 +12,9 @@ function Map(props) {
         title="map"
         src="https://travellermap.com/go/spin/1910?style=print"
       ></iframe>
+      <br></br>
       </div>
-          <img id="key" src={require('../pictures/travellermapkey.jpg')} alt="Map Key"></img>
+          <img src={require("../pictures/travellermapkey.jpg")} alt="Map Key"></img>
     </div>
   );
 }

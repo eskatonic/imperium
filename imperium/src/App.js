@@ -19,7 +19,7 @@ function App() {
       </div>
 
       <div className="App-Main">
-        <Route path="/" exact component={Main} />
+        {/* <Route path="/" exact component={Main} /> */} 
         <Route path="/map" component={Map} />
         <Route path="/library" component={Library} />
 

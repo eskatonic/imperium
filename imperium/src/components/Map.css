@@ -1,5 +1,6 @@
 body {
     background-image: url("../pictures/starrybackground.jpg");
+    background-size: cover;
     color: white;
 }
 
@@ -8,4 +9,9 @@ iframe {
     display: flex;
     height: 600px;
     width: 600px;
+}
+
+#key {
+    width: auto;
+    height: auto;
 }

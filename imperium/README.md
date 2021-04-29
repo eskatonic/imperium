@@ -1,70 +1,130 @@
-# HITCHHIKER'S GUIDE TO THE IMPERIUM
+# THE HITCHIKER'S GUIDE TO THE IMPERIUM
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+THE TRAVELLER MAP
 
-In the project directory, you can run:
+https://travellermap.com/
 
-### `yarn start`
+Traveller Map APIs
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Coordinates – sector lookup and coordinate conversion
+API URLs:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+https://travellermap.com/api/coordinates?sector=sector
 
-### `yarn test`
+https://travellermap.com/api/coordinates?sector=sector&hex=hex
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://travellermap.com/api/coordinates?sector=sector&subsector=subsector
 
-### `yarn build`
+https://travellermap.com/api/coordinates?sx=sx&sy=sy
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://travellermap.com/api/coordinates?sx=sx&sy=sy&hx=hx&hy=hy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Parameters:
+sector
+specify the sector location by name, e.g. "Spinward%20Marches"
+hex
+specify hex location; optional
+subsector
+specify subsector (A – P or name); optional
+sx
+sy
+sector in sector/hex coordinates
+hx
+hy
+hex in sector/hex coordinates
+x
+y
+location in world-space coordinates
+milieu
+data milieu (e.g. M1900); optional
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Credits – get world data for a given location
+API URLs:
+https://travellermap.com/api/credits?sector=sector
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://travellermap.com/api/credits?sector=sector&hex=hex
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+https://travellermap.com/api/credits?sx=sx&sy=sy
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://travellermap.com/api/credits?sx=sx&sy=sy&hx=hx&hy=hy
 
-## Learn More
+https://travellermap.com/api/credits?x=x&y=y
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Parameters:
+sector
+specify the sector location by name, e.g. "Spinward%20Marches"
+hex
+specify hex location within the named sector (defaults to 1620 if unspecified)
+sx
+sy
+sector in sector/hex coordinates
+hx
+hy
+hex in sector/hex coordinates
+x
+y
+location in world-space coordinates
+milieu
+data milieu (e.g. M1900); optional
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+SEC – retrieve UWP data for a sector
 
-### Analyzing the Bundle Size
+API URLs:
+https://travellermap.com/api/sec?sector=sector
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+https://travellermap.com/api/sec?sector=sector&hex=hex
 
-### Making a Progressive Web App
+https://travellermap.com/api/sec?sector=sector&subsector=subsector
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+https://travellermap.com/api/sec?sector=sector&quadrant=quadrant
 
-### Advanced Configuration
+https://travellermap.com/api/sec?sx=sx&sy=sy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Parameters:
+sector
+sector name or T5SS abbreviation
+subsector
+A – P or name; optional – if specified, only UWPs for that subsector will be included
+quadrant
+one of Alpha, Beta, Gamma or Delta
+sx
+sy
+sector in sector/hex coordinates
+milieu
+data milieu (e.g. M1900); optional
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+Options:
+type=SecondSurvey
+Data Format Definition The Traveller5 Second Survey format in human readable form: Hex, Name, UWP, Trade Classifications and Remarks, Extensions (Ix, Ex, Cx), Nobility (N), Bases (B), Travel Zone (Z), PBG, Worlds (W), Allegiance and Stellar. Note that fields may be blank if no official T5 data exists.
+Second Survey is the default for /data/ URLs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+type=TabDelimited
+Data Format Definition Full Traveller5 Second Survey data, in a more easily parsed format.
+type=Legacy
+Data Format Definition Legacy sector format: Name, Hex, UWP, Bases, Trade Classifications and Remarks, Travel Zone, PBG, Allegiance and Stellar.
+Legacy format is the default for /api/ URLs
+
+metadata=0
+Don't include sector metadata as comments in the file
+header=0
+Don't include field definitions in the file
+sscoords=1
+Use subsector style (0101-0810) numbering instead of sector style (0101-3240)
+
+
+Metadata – retrieve metadata for a sector
+
+API URLs:
+https://travellermap.com/api/metadata?sector=sector
+
+https://travellermap.com/api/metadata?sx=sx&sy=sy
+
+
